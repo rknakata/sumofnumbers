@@ -37,7 +37,7 @@ function sumRecursion(data, retVal, counter) {
   return sumRecursion(data, newRetVal, newCounter);
 }
 
-console.log(sumRecursion(testNums, 0, 0, 0));
+console.log(sumRecursion(testNums, 0, 0));
 
 function sumTheSimpleWay(data) {
   return _.reduce(data, function (memo, num) { return memo + num; }, 0);
