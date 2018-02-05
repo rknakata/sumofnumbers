@@ -25,18 +25,19 @@ function sumWhile(data) {
 
 console.log(sumWhile(testNums));
 
-// You have to pass in zero to retVal
-function sumRecursion(data, retVal) {
-  if (data.length === 0) {
+// You have to pass in zero to retVal and counter
+function sumRecursion(data, retVal, counter) {
+  if (data.length === counter) {
     return retVal;
   }
   let newRetVal = retVal;
-  newRetVal += data[0];
-  data.shift();
-  return sumRecursion(data, newRetVal);
+  let newCounter = counter;
+  newRetVal += data[counter];
+  newCounter += 1;
+  return sumRecursion(data, newRetVal, newCounter);
 }
 
-console.log(sumRecursion(testNums, 0));
+console.log(sumRecursion(testNums, 0, 0, 0));
 
 function sumTheSimpleWay(data) {
   return _.reduce(data, function (memo, num) { return memo + num; }, 0);
